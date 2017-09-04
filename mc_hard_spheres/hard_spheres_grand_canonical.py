@@ -1,4 +1,4 @@
-""" Implementation of Metropolis Monte-Carlo Algorithm for hard spheres in Canonical Ensemble
+""" Implementation of Metropolis Monte-Carlo Algorithm for hard spheres in Grand Canonical Ensemble
     @author: Akash Pallath
 """
 import random
