@@ -1,7 +1,9 @@
-This repository contains implementations of molecular simulation algorithms in Python. In the near future, I also aim to implement some of these algorithms parallely using MPI/C.
-
+# Molecular simulation codes
 Caution: Work in progress!
 
-## Metropolis Monte-Carlo simulations for hard-sphere systems
-- The folder `mc_hard_spheres` contains Python implementations of MCMC algorithms for the Canonical (NVT) ensemble, and for the Grand Canonical (mu,V,T) ensemble, for hard sphere systems.
+## Metropolis Monte Carlo simulations of Hard Spheres
+The folder `mc_hard_spheres` contains a C++ implementations of MCMC algorithms for the following ensembles, for hard-sphere systems:
+- Grand Canonical $(\mu, V, T)$ ensemble
 
+## References:
+- Frenkel, D. and Smit, B., Understanding Molecular Simulation
