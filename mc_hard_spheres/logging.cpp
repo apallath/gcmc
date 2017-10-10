@@ -1,7 +1,9 @@
 #include "logging.h"
 
 ofstream config_log;
+ofstream hgram_data;
 vector<int> npart;
+map<int,int> hgram;
 
 void log_init(){
     const time_t ctt = time(0);
@@ -17,9 +19,9 @@ void log_init(){
     cout << "nexc: " << nexc << endl;
     cout << "Activity: " << zz << endl;
     cout << endl;
-    cout << "Average density: " << (npav * 4.0 / 3.0 * M_PI * pow(sigma,3)) / (pow(L,3)) << endl << endl;
-    
-    config_log.open ("gcmc.hist");  
+    cout << "Average density: " << (npav * 4.0 / 3.0 * M_PI * pow(sigma,3)) / (pow(L,3)) << endl << endl;    
+    config_log.open ("gcmc.log");  
+    hgram_data.open("gcmc.hist"); //data for histogram
     
 }
 
@@ -51,6 +53,16 @@ void log_current_config(int move_type){
     npart.push_back(N);
 }
 
+void log_histogram(){
+    for(int i = 0; i < npart.size(); i++){
+        hgram[npart[i]] += 1;    
+    }
+    map<int,int>::iterator it;
+    for(it = hgram.begin(); it!= hgram.end(); it++){
+        hgram_data << it->first << " " << it->second << endl;
+    }
+}
+
 void log_finalize(){
     cout << "----STATISTICS----" << endl;
     printf("Acceptance:: Displacements: %d/%d = %lf, Insertions: %d/%d = %lf, Removals: %d/%d = %lf\n", succ_disp, att_disp, (double) 1.0*succ_disp/att_disp, succ_ins, att_ins, (double) 1.0*succ_ins/att_ins, succ_del, att_del, (double) 1.0*succ_del/att_del);
@@ -59,6 +71,7 @@ void log_finalize(){
         npartsum += npart[i];   
     }
     cout << "Average number of particles = " << npartsum/npart.size() << endl;
+    log_histogram();
     config_log.close();
-    
+    hgram_data.close();        
 }
