@@ -15,9 +15,7 @@ void log_init(){
     cout << "Number of MC cycles: " << ncycles << endl;
     cout << "npav: " << npav << endl;
     cout << "nexc: " << nexc << endl;
-    cout << "Temperature: " << T << endl;
-    cout << "Chemical Potential: " << mu << endl;
-    cout << "Mass of particles: " << m << endl;
+    cout << "Activity: " << zz << endl;
     cout << endl;
     cout << "Average density: " << (npav * 4.0 / 3.0 * M_PI * pow(sigma,3)) / (pow(L,3)) << endl << endl;
     

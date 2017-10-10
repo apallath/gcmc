@@ -20,13 +20,6 @@ int N = 0;
 bool periodic = true;
 int ncycles = 0;
 double delta = 0;
-
-double mu;
-double T;
-double m;
-
-double beta;
-double lambda;
 double zz;
 
 //GCMC parameters

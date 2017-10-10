@@ -21,14 +21,7 @@ extern int N; //no of particles
 extern bool periodic; //periodic boundary conditions, enabled by default
 extern int ncycles;
 extern double delta;
-
-extern double mu; //chemical potential
-extern double T; //temperature
-extern double m; //mass of particle
-
-extern double beta; //1/(kB*T)
-extern double lambda; //thermal de broglie wavelength, h/sqrt(2*pi*m*kB*T)
-extern double zz; //exp(beta*mu)/lambda^3
+extern double zz; //activity, exp(beta*mu)/lambda^3
 
 //GCMC parameters
 extern int npav; //average number of particles
