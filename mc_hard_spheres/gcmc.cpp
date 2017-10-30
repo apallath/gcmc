@@ -1,12 +1,16 @@
 #include "gcmc.h"
 
 void gcmc(){
+    make_cell_list();
     for(int i = 1; i <= ncycles; i++){
-        if(int(ranf() * (npav + nexc)) + 1 <= N){
-            hard_displace();
+        if(ranf() <= exc_disp_ratio){
+            hard_exchange();
         }
         else{
-            hard_exchange();
+            hard_displace();
+        }
+        if (i%samp_ival == 0){
+            sample_rdf(L/rmax_factor, L/dr_factor);
         }
     }
 }

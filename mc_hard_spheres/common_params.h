@@ -2,6 +2,7 @@
 #define COMMON_PARAMS
 
 #include<random>
+#include<list>
 using namespace std;
 
 //potential
@@ -20,12 +21,17 @@ extern double L; //box dimension
 extern int N; //no of particles
 extern bool periodic; //periodic boundary conditions, enabled by default
 extern int ncycles;
+extern int samp_ival; //interval for sampling averages
 extern double delta;
 extern double zz; //activity, exp(beta*mu)/lambda^3
 
+//Optimization: Cell list
+extern int ncells; //number of cells per dimension (user-specified)
+extern double cell_list_div; //size of a single cell list division along a dimension (calculated)
+extern vector<list<vector<double> > > cell_list;
+
 //GCMC parameters
-extern int npav; //average number of particles
-extern int nexc; //average number of exchanges
+extern double exc_disp_ratio;
 
 //Particles
 extern vector<vector<double> > particles;
@@ -40,5 +46,16 @@ extern int att_del; //deletions attempted
 extern int succ_disp; //successful displacements
 extern int succ_ins; //successful insertions
 extern int succ_del; //successful deletions
+
+//RDF plot parameters
+extern int rmax_factor;
+extern int dr_factor;
+
+//Logging
+extern int logging; //off by default
+
+//Resume from state
+extern bool read_from_file;
+
 
 #endif

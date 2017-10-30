@@ -5,10 +5,10 @@
 #include "logging.h"
 #include "mc_moves.h"
 #include "interaction.h"
+#include "sampling.h"
 
 using namespace std;
 
-void gcmc_init_config();
 void gcmc();
 
 #endif

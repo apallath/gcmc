@@ -19,12 +19,17 @@ double L = 0;
 int N = 0;
 bool periodic = true;
 int ncycles = 0;
+int samp_ival = 0;
 double delta = 0;
 double zz;
 
+//Optimization: Cell list
+int ncells;
+double cell_list_div;
+vector<list<vector<double> > > cell_list;
+
 //GCMC parameters
-int npav = 0;
-int nexc = 0;
+double exc_disp_ratio = 0.6; //ratio of exchanges to displacements
 
 //Particles
 vector<vector<double> > particles;
@@ -32,9 +37,20 @@ vector<vector<double> > particles;
 //Time
 double start;
 
+//Statistics
 int att_disp; 
 int att_ins;
 int att_del;
 int succ_disp;
 int succ_ins;
 int succ_del;
+
+//RDF computation
+int rmax_factor;
+int dr_factor;
+
+//Logging
+int logging = 0;
+
+//Resume from state
+bool read_from_file = false;
