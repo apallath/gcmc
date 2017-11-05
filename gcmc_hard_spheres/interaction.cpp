@@ -41,7 +41,7 @@ double dist(vector<double> newp, vector<double> p){
 }
 
 bool overlap(vector<double> newp, vector<double> p){
-    bool olap =  dist(newp, p) < 4.0 * pow(sigma,2);
+    bool olap =  dist(newp, p) < pow(sigma,2);
     return olap;
 }
 

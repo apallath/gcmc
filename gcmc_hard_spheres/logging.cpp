@@ -11,9 +11,9 @@ void log_init(){
     cout << "Ensemble: Grand Canonical" << endl;
     cout << "Hard spheres? " << potential_type << endl;
     cout << endl;
-    cout << "Radius: " << sigma << endl;
+    cout << "Diameter: " << sigma << endl;
     cout << "Box length: " << L << endl;
-    cout << "Cell list divisions" << cell_list_div << endl;
+    cout << "Cell list divisions: " << cell_list_div << endl;
     cout << "Displacement magnitude: " << delta << endl;
     cout << "Periodic boundary conditions? " << periodic << endl;
     cout << "Number of MC cycles: " << ncycles << endl;
@@ -78,7 +78,7 @@ void log_finalize(){
     }
     n_avg = npartsum/npart.size();
     cout << "Average number of particles = " << n_avg << endl;
-    cout << "Average density: " << (n_avg * 4.0 / 3.0 * M_PI * pow(sigma,3)) / (pow(L,3)) << endl << endl;
+    cout << "Average density: " << (n_avg * 4.0 / 3.0 * M_PI * pow(sigma/2,3)) / (pow(L,3)) << endl << endl;
     log_histogram();
     config_log.close();
     hgram_data.close();        

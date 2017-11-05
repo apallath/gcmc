@@ -12,7 +12,12 @@
 *.a
 *.lib
 *.out
-*.in
-*.out
 *.config
 *.hist
+
+*.png
+*.state
+*.dat
+
+dist/
+out/
