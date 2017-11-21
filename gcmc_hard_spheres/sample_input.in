@@ -1,0 +1,28 @@
+potential type (0 = hard spheres, 1 = Lennard-Jones)
+    0
+particle diameter (sigma)
+    1.0
+box scaling factor (bfactor)
+    50.0
+cell list divisions per dimension (cell_list_div) [must be a divisor of the box scaling factor]
+    5
+periodic boundary conditions (0 = false, 1 = true)
+    1
+number of cycles (ncycles)
+    100000
+sampling interval (samp_ival)
+    50000
+activity (zz = exp(beta*mu)/lambda^3)
+    0.0115
+(gcmc) exchanges to displacements ratio
+    0.7
+magnitude of attempted displacement (delta)
+    0.75
+(rdf plot param) maximum radius for rdf plot, L/()
+    8
+(rdf plot param) shell thickenss dr = L/()
+    500
+logging (0 = off, 1 = on)
+    0
+read state from file (0 = false, 1 = true)
+    1

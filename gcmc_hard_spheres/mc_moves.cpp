@@ -31,9 +31,6 @@ void hard_exchange(){
 
         if(e_new == 0){
             double arg = (pow(L,3) * zz)/(N+1);
-            if(ranf() >= arg){
-                cout << "Rejected by rule: " << ranf() << " " << arg << endl;
-            }
             if(ranf() < arg) { //acceptance condition
                 particles.push_back(newp); N+=1;
                 cell_list_insert(newp);

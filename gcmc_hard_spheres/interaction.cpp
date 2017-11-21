@@ -97,8 +97,8 @@ int energy_hard_insert(vector<double> newp){
         for(vector<int>::iterator b = delta_neigh.begin(); b < delta_neigh.end(); b++){
             for(vector<int>::iterator c = delta_neigh.begin(); c < delta_neigh.end(); c++){
                 vector<int> neigh = {((bc[0] + *a) % ncells + ncells) % ncells, 
-                                     ((bc[0] + *b) % ncells + ncells) % ncells, 
-                                     ((bc[0] + *c) % ncells + ncells) % ncells};
+                                     ((bc[1] + *b) % ncells + ncells) % ncells, 
+                                     ((bc[2] + *c) % ncells + ncells) % ncells};
                 boxes.push_back(map_box(neigh));
             }
         }

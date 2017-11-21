@@ -14,7 +14,7 @@ if [[ -d dist ]]; then
     rm -r dist
 fi
 mkdir dist
-mv mchs.out dist/
-mv make_plots.py dist/
-mv run.sh dist/
-mv sample_input.in dist/input.in
+cp mchs.out dist/
+cp make_plots.py dist/
+cp run.sh dist/
+cp sample_input.in dist/input.in
