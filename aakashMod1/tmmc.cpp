@@ -36,4 +36,9 @@ void tmmc_update(double accProb,bool inc,bool UpdateNorm){
 
 
 	}
+	
+}
+
+double tmmc_bias(bool inc){
+	
 }
