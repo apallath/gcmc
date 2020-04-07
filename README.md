@@ -1,9 +1,6 @@
-# Molecular simulation codes
-Caution: Work in progress!
-
-### TODO:
-- Data storage using HDF5
-- Massively parallel GPGPU implementation (CUDA or OpenCL)
+# Efficient MCMC simulations in the Grand Canonical Ensemble
+- Extensible for different types for interactions (currently implements hard-sphere models)
+- Efficient updates using cell lists for tracking
 
 # References:
 - Frenkel, D. and Smit, B., Understanding Molecular Simulation
